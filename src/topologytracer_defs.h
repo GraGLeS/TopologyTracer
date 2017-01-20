@@ -10,7 +10,7 @@
 #define MASTER									0
 #define SEQUENTIAL								1
 #define MINIMUM_COMPLEXITY_PERNODE				((10.0)*(1024.0)*(1024.0))		//in byte
-#define MAXIMUM_COMPLEXITY_PERNODE				((4096.0)*(1024.0)*(1024.0))	//in byte
+#define MAXIMUM_COMPLEXITY_PERNODE				((15096.0)*(1024.0)*(1024.0))	//in byte
 
 //user-defined dataset related
 #define CMIESSEN_ORIFILE_MAXIMUMNEIGHBORS		100

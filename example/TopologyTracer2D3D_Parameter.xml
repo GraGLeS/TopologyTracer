@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Parameters>
+	<!-- metadata specific to simulation-->
+	<AnalysisMode>0</AnalysisMode>
+	<!--0 track growth history in parallel
+		1 track growth history sequential (caution: may take very long as MASTER only reads one file after another, also requires target list)
+		2 sequential loading of a KNN file and a target file to correlate evolution of grain with initial growth prognosis
+	-->
+	<TargetGrainIDs>Targets.dat</TargetGrainIDs>
+	<KNNFile>TopoTracer2D3D.SimID.10.KNN.ID.10.csv</KNNFile>
+	
+	<SnapshotFirst>900</SnapshotFirst>
+	<SnapshotOffset>1</SnapshotOffset>
+	<SnapshotLast>909</SnapshotLast>
+	<Dimensionality>3</Dimensionality>
+	<DomainEdgeLength>509</DomainEdgeLength>
+	<HAGBEnergy>1.300</HAGBEnergy>
+	<!-- in GraGeLes the rho is rho * Gbb/gamma*PhysDomainSize-->
+	<DislocEnPerM>2.5e-10</DislocEnPerM>
+	<PhysDomainEdgeLength>2.52e-4</PhysDomainEdgeLength>	
+	<LargestGrainID>100000</LargestGrainID>
+	<!-- define largest ID ever occurring -->
+
+	<!-- parallel performance and data partitioning relevant settings -->
+	<LocalDatabaseMaximumSize>10.0e9</LocalDatabaseMaximumSize>
+	<!-- how much Texture_ and Faces_ data pair in total per node--> 
+	<MPIReadBlockLength>10485760</MPIReadBlockLength>
+	<MaxIDRange>100</MaxIDRange>
+	<!-- specifies maximum number of contiguous grain IDs collected in one IDBucket
+		the smaller the more buckets but the proportional less searching for a grain-->
+	<MemRegionsX>1</MemRegionsX>
+	<MemRegionsY>1</MemRegionsY>
+	<MemRegionsZ>1</MemRegionsZ>
+
+	<DeveloperMode>0</DeveloperMode>
+	<!-- if set to 1 much IO and ASCII files to check data consistency, otherwise not-->
+	<OnlyProbeTheWorkPartitioning>0</OnlyProbeTheWorkPartitioning>
+	<!-- if set to 1 only the work partitioning will be detailed but other processing will take place-->
+	<MaximumNumberOfKShells>16</MaximumNumberOfKShells>
+	<HAGBDetectionThreshold>15.0</HAGBDetectionThreshold>
+	<MaximumDisoriAngle>62.8</MaximumDisoriAngle>
+	<DisoriAngleBinningWidth>0.1</DisoriAngleBinningWidth>
+	<!-- 0.1 degrees practical resolution limit for electron-diffraction based techniques-->
+	
+	<!-- What to analyze, add further post-processing operations here 0 disables, larger 1-->
+	<AnalyzeQuantiles>1</AnalyzeQuantiles>
+	<AnalyzeTrajectoriesForward>0</AnalyzeTrajectoriesForward>
+	<AnalyzeTrajectoriesBackward>1</AnalyzeTrajectoriesBackward>
+	<AnalyzeKNN>0</AnalyzeKNN>
+	<AnalyzeMODF>1</AnalyzeMODF>
+	<!-- only boundaries between grains both of which dont have boundary contact-->
+	<AnalyzeClassicalNucModels>0</AnalyzeClassicalNucModels>
+	<AnalyzeApproxRXFraction>0</AnalyzeApproxRXFraction>
+	<!-- takes all grains with no bnd contact from the SnapshotLast and calculates their volume fraction
+		to total volume fraction of grains not touching the boundary per timestep-->
+	<AnalyzeAbnormalGrains>0</AnalyzeAbnormalGrains>
+	
+</Parameters>

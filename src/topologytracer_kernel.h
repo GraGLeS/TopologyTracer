@@ -29,7 +29,7 @@ using namespace std;
 
 
 //switch on for GNU, ##MK::prevents safe conversion to 32bit machine...
-typedef long __int64;
+//typedef long __int64;
 
 
 struct ori
