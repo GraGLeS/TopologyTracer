@@ -6,6 +6,6 @@ MPI-parallelized postprocessor for instrumented grain growth simulations of poly
 
 run command
 
-$mpiexec topotracer2d3d_intel16 <simid> paramters.xml
+$mpiexec -n 1 topotracer2d3d_intel16 simid paramters.xml
 
 Use matlab scripts to reload binary files and plot grain traces etc.
