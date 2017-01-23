@@ -1,5 +1,6 @@
 # TopologyTracer
-MPI-parallelized postprocessor for instrumented grain growth simulations of polycrystals
+MPI-parallelized postprocessor for instrumented grain growth simulations of polycrystals --- use the newVersion branch!
+
 
 
 * Collect growth curves of individual grains
